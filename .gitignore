@@ -1,0 +1,7 @@
+.venv
+venv
+models
+generated_projects
+data
+.env
+download_model.py

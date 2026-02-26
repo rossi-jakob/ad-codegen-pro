@@ -31,14 +31,14 @@ class ModelLoader:
         if self._loaded:
             return
 
-        print("[*] Loading tokenizer …")
+        # print("[*] Loading tokenizer …")
         self.tokenizer = self._load_tokenizer()
 
-        print("[*] Loading model …")
+        # print("[*] Loading model …")
         self.model = self._load_model()
 
         self._loaded = True
-        print("[✓] Model ready.")
+        # print("[✓] Model ready.")
 
     # ── private ─────────────────────────────────────────────────
     def _resolve_path(self):
@@ -48,7 +48,7 @@ class ModelLoader:
         return MODEL_NAME
 
     def _load_tokenizer(self):
-        print(MODEL_PATH)
+        # print(MODEL_PATH)
         source = self._resolve_path()
         tokenizer = AutoTokenizer.from_pretrained(
             source,
@@ -89,7 +89,7 @@ class ModelLoader:
         os.makedirs(MODEL_PATH, exist_ok=True)
         self.tokenizer.save_pretrained(MODEL_PATH)
         self.model.save_pretrained(MODEL_PATH)
-        print(f"[✓] Model saved to {MODEL_PATH}")
+        # print(f"[✓] Model saved to {MODEL_PATH}")
 
     def count_tokens(self, text: str) -> int:
         return len(self.tokenizer.encode(text, add_special_tokens=False))

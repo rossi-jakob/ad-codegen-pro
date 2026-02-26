@@ -34,9 +34,9 @@ class ProjectGenerator:
             with open(full_path, "w", encoding="utf-8") as f:
                 f.write(content)
 
-            print(f"    ✓ {filepath}")
+            # print(f"    ✓ {filepath}")
 
-        print(f"\n[✓] Project saved to: {project_dir}")
+        # print(f"\n[✓] Project saved to: {project_dir}")
         return project_dir
 
     @staticmethod
